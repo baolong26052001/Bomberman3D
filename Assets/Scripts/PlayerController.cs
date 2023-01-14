@@ -7,11 +7,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float xMoveSpeed;
     [SerializeField] float yMoveSpeed;
     [SerializeField] float zMoveSpeed;
+    [SerializeField] GameObject bombPrefab;
 
     public KeyCode inputUp = KeyCode.W;
     public KeyCode inputDown = KeyCode.S;
     public KeyCode inputRight = KeyCode.D;
     public KeyCode inputLeft = KeyCode.A;
+
+    public KeyCode placeBomb = KeyCode.Space;
 
     void Start()
     {
@@ -20,7 +23,8 @@ public class PlayerController : MonoBehaviour
 
     void Update() 
     {
-        Movement();      
+        Movement();
+        PlaceBomb(); 
     }
 
     private void Movement()
@@ -51,9 +55,10 @@ public class PlayerController : MonoBehaviour
 
     private void PlaceBomb()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(placeBomb))
         {
             
+            GameObject bomb = Instantiate(bombPrefab, transform.position, Quaternion.identity);
         }
     }
 }
