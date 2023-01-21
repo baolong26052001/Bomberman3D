@@ -13,12 +13,13 @@ public class PlayerController : MonoBehaviour
     public KeyCode inputDown = KeyCode.S;
     public KeyCode inputRight = KeyCode.D;
     public KeyCode inputLeft = KeyCode.A;
-
     public KeyCode placeBomb = KeyCode.Space;
+
+    Rigidbody myRigidBody;
 
     void Start()
     {
-        
+        myRigidBody = GetComponent<Rigidbody>();
     }
 
     void Update() 
