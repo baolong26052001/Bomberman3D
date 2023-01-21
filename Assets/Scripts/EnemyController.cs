@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour
         if (isMoving)
         {
             
-            //myRigidBody.MovePosition(Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * moveSpeed));
+            myRigidBody.MovePosition(Vector3.MoveTowards(transform.position, target[0].position, Time.deltaTime * moveSpeed));
         }
     }
 
