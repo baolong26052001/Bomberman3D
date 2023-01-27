@@ -62,8 +62,20 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(placeBomb))
         {
-            
             GameObject bomb = Instantiate(bombPrefab, transform.position, Quaternion.identity);
+        }
+    }
+
+    private void Die()
+    {
+        myGameManager.PlayerDied();
+    }
+
+    private void OnCollisionEnter(Collision collision) 
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Die();
         }
     }
 }
