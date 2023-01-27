@@ -2770,6 +2770,10 @@ PrefabInstance:
       propertyPath: zMoveSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2144630209241774141, guid: a0bff63361c0641499a4843bdce397f4, type: 3}
+      propertyPath: myGameManager
+      value: 
+      objectReference: {fileID: 1902019413}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0bff63361c0641499a4843bdce397f4, type: 3}
 --- !u!4 &480075918 stripped
@@ -8836,6 +8840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 2144630209241774128, guid: a0bff63361c0641499a4843bdce397f4, type: 3}
+  playerParentTransform: {fileID: 1972013895}
 --- !u!4 &1902019414
 Transform:
   m_ObjectHideFlags: 0

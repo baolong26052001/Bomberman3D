@@ -7,7 +7,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float xMoveSpeed;
     [SerializeField] float yMoveSpeed;
     [SerializeField] float zMoveSpeed;
+
+    Rigidbody myRigidBody;
+
     [SerializeField] GameObject bombPrefab;
+
+    private GameManager myGameManager;
 
     public KeyCode inputUp = KeyCode.W;
     public KeyCode inputDown = KeyCode.S;
@@ -15,11 +20,10 @@ public class PlayerController : MonoBehaviour
     public KeyCode inputLeft = KeyCode.A;
     public KeyCode placeBomb = KeyCode.Space;
 
-    Rigidbody myRigidBody;
-
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody>();
+        myGameManager = FindObjectOfType<GameManager>();
     }
 
     void Update() 
