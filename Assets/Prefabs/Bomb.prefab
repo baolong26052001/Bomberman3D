@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodeDelay: 2
   explosionPrefab: {fileID: 8242072549418167730, guid: 3936e369ed989194e99138b8b6507964, type: 3}
+  explodeSpeed: 200
+  explodeRange: 2
 --- !u!135 &7335709838849324374
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -136,7 +138,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ab7b2e17180d85f4f8d4cdcf1a36816c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

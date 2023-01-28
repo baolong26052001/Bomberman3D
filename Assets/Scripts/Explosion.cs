@@ -9,10 +9,20 @@ public class Explosion : MonoBehaviour
     private float explodeSpeed = 200f;
     private float explodeRange = 2f;
 
+    private Vector3 startPosition;
+
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody>();
+        startPosition = transform.position;
+    }
 
+    private void Update()
+    {
+        if (Vector3.Distance(transform.position, startPosition) >= explodeRange)
+        {
+            Destroy(gameObject);
+        }
     }
 
     
