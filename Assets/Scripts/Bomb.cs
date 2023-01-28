@@ -7,6 +7,9 @@ public class Bomb : MonoBehaviour
     PlayerController player;
     EnemyController enemy;
 
+    [SerializeField] private float explodeDelay = 2f;
+    private float explosionTimer = 0;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -15,7 +18,12 @@ public class Bomb : MonoBehaviour
 
     void Update()
     {
-        
+        explosionTimer += Time.deltaTime;
+        if (explosionTimer >= explodeDelay)
+        {
+            Debug.Log("Bomb has exploded");
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerExit(Collider other) 
