@@ -17,7 +17,7 @@ public class Bomb : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyController>();
+        //enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyController>();
     }
 
     void Update()

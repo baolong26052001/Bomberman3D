@@ -109,6 +109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6267144edd7a34e9c7b81ab742989f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMoveSpeed: 2
-  yMoveSpeed: 0.25
-  zMoveSpeed: 1
+  xMoveSpeed: 3
+  yMoveSpeed: 3
+  zMoveSpeed: 3
+  bombPrefab: {fileID: 8946626695004240406, guid: cb99338d5152b974db6a0dacf61747e5, type: 3}
+  inputUp: 119
+  inputDown: 115
+  inputRight: 100
+  inputLeft: 97
+  placeBomb: 32
