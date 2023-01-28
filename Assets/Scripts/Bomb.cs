@@ -10,6 +10,10 @@ public class Bomb : MonoBehaviour
     [SerializeField] private float explodeDelay = 2f;
     private float explosionTimer = 0;
 
+    [SerializeField] private GameObject explosionPrefab;
+    [SerializeField] private float explodeSpeed = 200f;
+    [SerializeField] private float explodeRange = 2f;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -21,7 +25,7 @@ public class Bomb : MonoBehaviour
         explosionTimer += Time.deltaTime;
         if (explosionTimer >= explodeDelay)
         {
-            Debug.Log("Bomb has exploded");
+            Explode();
             Destroy(gameObject);
         }
     }
@@ -40,6 +44,16 @@ public class Bomb : MonoBehaviour
 
     private void Explode()
     {
-        
+        GameObject explosionRight = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        explosionRight.GetComponent<Explosion>().SetExplosion(Vector3.right, explodeSpeed, explodeRange);
+
+        GameObject explosionLeft = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        explosionLeft.GetComponent<Explosion>().SetExplosion(Vector3.left, explodeSpeed, explodeRange);
+
+        GameObject explosionUp = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        explosionUp.GetComponent<Explosion>().SetExplosion(Vector3.forward, explodeSpeed, explodeRange);
+
+        GameObject explosionDown = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        explosionDown.GetComponent<Explosion>().SetExplosion(Vector3.back, explodeSpeed, explodeRange);
     }
 }

@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Instantiate(playerPrefab, new Vector3(0,0,0), Quaternion.identity, playerParentTransform);
+        Instantiate(playerPrefab, new Vector3(0,-1,0), Quaternion.identity, playerParentTransform);
         PlayerDied();
     }
 
