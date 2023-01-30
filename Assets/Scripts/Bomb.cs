@@ -26,7 +26,7 @@ public class Bomb : MonoBehaviour
         if (explosionTimer >= explodeDelay)
         {
             Explode();
-            Destroy(gameObject);
+            
         }
     }
 
@@ -42,7 +42,7 @@ public class Bomb : MonoBehaviour
         }
     }
 
-    private void Explode()
+    public void Explode()
     {
         GameObject explosionRight = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         explosionRight.GetComponent<Explosion>().SetExplosion(Vector3.right, explodeSpeed, explodeRange);
@@ -55,5 +55,7 @@ public class Bomb : MonoBehaviour
 
         GameObject explosionDown = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         explosionDown.GetComponent<Explosion>().SetExplosion(Vector3.back, explodeSpeed, explodeRange);
+
+        Destroy(gameObject);
     }
 }

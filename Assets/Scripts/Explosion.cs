@@ -43,6 +43,12 @@ public class Explosion : MonoBehaviour
         if (other.gameObject.tag == "Block")
         {
             Destroy(gameObject);
-        }    
+        }
+
+        if (other.gameObject.tag == "Bomb")
+        {
+            other.gameObject.GetComponent<Bomb>().Explode();
+            Destroy(gameObject);
+        }
     }
 }
