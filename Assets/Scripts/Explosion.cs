@@ -37,4 +37,12 @@ public class Explosion : MonoBehaviour
         explodeSpeed = speed;
         explodeRange = range;
     }
+
+    private void OnTriggerEnter(Collider other) 
+    {
+        if (other.gameObject.tag == "Block")
+        {
+            Destroy(gameObject);
+        }    
+    }
 }
