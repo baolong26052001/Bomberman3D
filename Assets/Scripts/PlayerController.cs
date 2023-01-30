@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
 
     private GameManager myGameManager;
 
+    [SerializeField] private int maxBombs = 2;
+    private int currentBombsPlaced = 0;
+
     public KeyCode inputUp = KeyCode.W;
     public KeyCode inputDown = KeyCode.S;
     public KeyCode inputRight = KeyCode.D;
@@ -60,10 +63,11 @@ public class PlayerController : MonoBehaviour
 
     private void PlaceBomb()
     {
-        if (Input.GetKeyDown(placeBomb))
+        if (Input.GetKeyDown(placeBomb) && (currentBombsPlaced < maxBombs))
         {
             GameObject bomb = Instantiate(bombPrefab, transform.position, Quaternion.identity);
             //bomb.transform.position = new Vector3(Mathf.Round(transform.position.x), 0.8f, Mathf.Round(transform.position.z));
+            currentBombsPlaced++;
         }
     }
 
@@ -78,5 +82,10 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void BombExploded()
+    {
+        currentBombsPlaced--;
     }
 }

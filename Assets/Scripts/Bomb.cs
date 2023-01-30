@@ -56,6 +56,7 @@ public class Bomb : MonoBehaviour
         GameObject explosionDown = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         explosionDown.GetComponent<Explosion>().SetExplosion(Vector3.back, explodeSpeed, explodeRange);
 
+        player.BombExploded();
         Destroy(gameObject);
     }
 }
