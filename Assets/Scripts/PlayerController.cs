@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(placeBomb))
         {
             GameObject bomb = Instantiate(bombPrefab, transform.position, Quaternion.identity);
-            bomb.transform.position = new Vector3(Mathf.Round(transform.position.x), 0f, Mathf.Round(transform.position.z));
+            //bomb.transform.position = new Vector3(Mathf.Round(transform.position.x), 0.8f, Mathf.Round(transform.position.z));
         }
     }
 
