@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int maxBombs = 2;
     private int currentBombsPlaced = 0;
 
+    private bool hasControl = true;
+    [SerializeField] private float destroyTime = 2f;
+
     public KeyCode inputUp = KeyCode.W;
     public KeyCode inputDown = KeyCode.S;
     public KeyCode inputRight = KeyCode.D;
@@ -31,8 +34,12 @@ public class PlayerController : MonoBehaviour
 
     void Update() 
     {
-        Movement();
-        PlaceBomb(); 
+        if (hasControl == true)
+        {
+            Movement();
+            PlaceBomb(); 
+        }
+        
     }
 
     private void Movement()
@@ -73,6 +80,8 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        hasControl = false;
+        Destroy(gameObject, destroyTime);
         myGameManager.PlayerDied();
     }
 
@@ -87,5 +96,10 @@ public class PlayerController : MonoBehaviour
     public void BombExploded()
     {
         currentBombsPlaced--;
+    }
+
+    public float GetDestroyDelayTime()
+    {
+        return destroyTime;
     }
 }
