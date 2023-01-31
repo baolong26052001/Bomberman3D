@@ -50,5 +50,15 @@ public class Explosion : MonoBehaviour
             other.gameObject.GetComponent<Bomb>().Explode();
             Destroy(gameObject);
         }
+
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<PlayerController>().Die();
+        }
+
+        if (other.gameObject.tag == "Enemy")
+        {
+            other.gameObject.GetComponent<EnemyController>().Die();
+        }
     }
 }

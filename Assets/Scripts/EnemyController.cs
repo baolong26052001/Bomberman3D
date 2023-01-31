@@ -51,4 +51,9 @@ public class EnemyController : MonoBehaviour
             isMoving = false;
         }
     }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
 }

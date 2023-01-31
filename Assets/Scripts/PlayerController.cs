@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         myGameManager.PlayerDied();
     }
