@@ -60,5 +60,11 @@ public class Explosion : MonoBehaviour
         {
             other.gameObject.GetComponent<EnemyController>().Die();
         }
+
+        if (other.gameObject.tag == "Destructible")
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
