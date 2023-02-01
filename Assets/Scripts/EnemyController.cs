@@ -5,14 +5,12 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private Transform[] target;
-
-    
-
     [SerializeField] private float moveSpeed = 1f;
 
     Rigidbody myRigidBody;
 
     private bool isMoving = true;
+    private bool movingForward = true;
     private int waypointDestination = 0;
 
     private void Start() 
@@ -28,14 +26,40 @@ public class EnemyController : MonoBehaviour
             myRigidBody.MovePosition(Vector3.MoveTowards(transform.position, target[waypointDestination].position, Time.deltaTime * moveSpeed));
             if (Vector3.Distance(transform.position, target[waypointDestination].position) < 0.1f)
             {
-                if (waypointDestination >= target.Length - 1)
+
+                isMoving = false;
+                if (movingForward)
                 {
-                    waypointDestination = 0;
+                    
+                    if (waypointDestination >= target.Length - 1)
+                    {
+                        movingForward = false;
+                        Invoke("DecreaseWayPointDestination", 1f);
+                    }
+                    else
+                    {
+                        
+                        Invoke("IncreaseWayPointDestination", 1f);
+                    }
                 }
+
+
+
                 else
                 {
-                    waypointDestination++;
+                    if (waypointDestination <= 0)
+                    {
+                        movingForward = true;
+                        Invoke("IncreaseWayPointDestination", 1f);
+                    }
+                    else
+                    {
+                        Invoke("DecreaseWayPointDestination", 1f);
+                    }
                 }
+
+
+
             }
         }
     }
@@ -55,5 +79,17 @@ public class EnemyController : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
+    }
+
+    private void IncreaseWayPointDestination()
+    {
+        waypointDestination++;
+        isMoving = true;
+    }
+
+    private void DecreaseWayPointDestination()
+    {
+        waypointDestination--;
+        isMoving = true;
     }
 }
