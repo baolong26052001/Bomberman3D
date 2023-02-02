@@ -4,12 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bomb
   - Enemy
   - Block
+  - Bomb
   - Destructible
-  - GameManager
-  - PowerUp
   layers:
   - Default
   - TransparentFX
@@ -17,8 +15,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Bombs
-  - Enemies
+  - 
+  - 
   - 
   - 
   - 
