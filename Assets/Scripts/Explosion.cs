@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Explosion : MonoBehaviour
+public class explosion : MonoBehaviour
 {
     private Rigidbody myRigidBody;
     private Vector3 explodeDirection = Vector3.zero;
@@ -11,6 +11,7 @@ public class Explosion : MonoBehaviour
 
     private Vector3 startPosition;
 
+    // Start is called before the first frame update
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody>();
@@ -21,14 +22,13 @@ public class Explosion : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, startPosition) >= explodeRange)
         {
-            Destroy(gameObject);
+            Destroy(gameObject);        
         }
     }
 
-    
-    private void FixedUpdate() 
+    private void FixedUpdate()
     {
-        myRigidBody.velocity = explodeDirection * explodeSpeed * Time.deltaTime;
+        myRigidBody.velocity = explodeDirection * explodeSpeed * Time.deltaTime;        
     }
 
     public void SetExplosion(Vector3 direction, float speed, float range)
@@ -38,33 +38,50 @@ public class Explosion : MonoBehaviour
         explodeRange = range;
     }
 
-    private void OnTriggerEnter(Collider other) 
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Block")
+        switch (other.gameObject.tag)
         {
-            Destroy(gameObject);
-        }
+            case "Block":
+                {
+                    Destroy(gameObject);
+                    break;
+                }
+            case "Bomb":
+                {
+                    other.gameObject.GetComponent<Bomb>().Explode();
+                    Destroy(gameObject);
+                    break;
+                }
+            case "Player":
+                {
+                    other.gameObject.GetComponent<PlayerController>().Die();
+                    break;
+                }
+            case "Enemy":
+                {
+                    other.gameObject.GetComponent<EnemyController>().Die();
+                    break;
+                }
+            case "Destructible":
+                {
+                    FindObjectOfType<PowerUpSpawner>().BlockDestroyed(other.transform.position);
 
-        if (other.gameObject.tag == "Bomb")
-        {
-            other.gameObject.GetComponent<Bomb>().Explode();
-            Destroy(gameObject);
-        }
+                    // Play destroy block animation
+                    other.gameObject.GetComponent<Animator>().SetTrigger("isDestroyed");
+                    Destroy(other.gameObject, .5f);
+                    Destroy(gameObject);
 
-        if (other.gameObject.tag == "Player")
-        {
-            other.gameObject.GetComponent<PlayerController>().Die();
-        }
+                    break;
+                }
+            case "PowerUp":
+                {
+                    Destroy(other.gameObject);
+                    Destroy(gameObject);
 
-        if (other.gameObject.tag == "Enemy")
-        {
-            other.gameObject.GetComponent<EnemyController>().Die();
-        }
-
-        if (other.gameObject.tag == "Destructible")
-        {
-            Destroy(other.gameObject);
-            Destroy(gameObject);
+                    break;
+                }
         }
     }
+
 }
