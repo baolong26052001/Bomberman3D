@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8047292630909624989}
   - component: {fileID: 6704635283979141581}
   m_Layer: 0
-  m_Name: Block
+  m_Name: Block 1
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

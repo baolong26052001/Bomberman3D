@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public KeyCode inputUp;
+    public KeyCode inputDown;
+    public KeyCode inputRight;
+    public KeyCode inputLeft;
+    public KeyCode placeBomb;
+
     float moveSpeed = 0;    
 
     Rigidbody myRigidBody;
