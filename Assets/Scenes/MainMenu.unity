@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1628,7 +1628,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0.45882353, b: 0.07058824, a: 1}
+    m_NormalColor: {r: 1, g: 0.90130967, b: 0.07058823, a: 1}
     m_HighlightedColor: {r: 0.20784315, g: 0.7294118, b: 0.95294124, a: 1}
     m_PressedColor: {r: 0.7924528, g: 0.002990329, b: 0.002990329, a: 1}
     m_SelectedColor: {r: 1, g: 0.45882353, b: 0.07058824, a: 1}
@@ -3490,7 +3490,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0.45882353, b: 0.07058824, a: 1}
+    m_NormalColor: {r: 1, g: 0.9019608, b: 0.07058824, a: 1}
     m_HighlightedColor: {r: 0.11764707, g: 0.654902, b: 0.882353, a: 1}
     m_PressedColor: {r: 0.7924528, g: 0.002990329, b: 0.002990329, a: 1}
     m_SelectedColor: {r: 1, g: 0.45882353, b: 0.07058824, a: 1}
@@ -4815,7 +4815,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0.45882353, b: 0.07058824, a: 1}
+    m_NormalColor: {r: 1, g: 0.9019608, b: 0.07058824, a: 1}
     m_HighlightedColor: {r: 0.11764707, g: 0.654902, b: 0.882353, a: 1}
     m_PressedColor: {r: 0.7924528, g: 0.002990329, b: 0.002990329, a: 1}
     m_SelectedColor: {r: 1, g: 0.45882353, b: 0.07058824, a: 1}
