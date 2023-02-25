@@ -6947,6 +6947,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4072766921228750755, guid: 9922fcdb63960d643890b9fb9eacbff8, type: 3}
+      propertyPath: songArray.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4072766921228750755, guid: 9922fcdb63960d643890b9fb9eacbff8, type: 3}
+      propertyPath: songArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b70c9dd3bb4f4974ab301163be7cc55d, type: 3}
+    - target: {fileID: 4072766921228750755, guid: 9922fcdb63960d643890b9fb9eacbff8, type: 3}
+      propertyPath: songArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: df57b9dfe298e1340b1c8ff7e49b69e7, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9922fcdb63960d643890b9fb9eacbff8, type: 3}
 --- !u!1001 &596658176
@@ -11664,6 +11676,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1878895497, guid: 9908fd3949a28414ab348e3b48ce57de, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 136.0519
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878895497, guid: 9908fd3949a28414ab348e3b48ce57de, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 124.4869
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878895497, guid: 9908fd3949a28414ab348e3b48ce57de, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5.4196
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878895497, guid: 9908fd3949a28414ab348e3b48ce57de, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 66.3985
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878895498, guid: 9908fd3949a28414ab348e3b48ce57de, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b8d143232d619b34dafc6bac5b0f701a, type: 3}
     - target: {fileID: 1178245310196882298, guid: 9908fd3949a28414ab348e3b48ce57de, type: 3}
       propertyPath: powerUpPrefabs.Array.size
       value: 3
